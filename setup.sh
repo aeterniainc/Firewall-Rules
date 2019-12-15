@@ -1,3 +1,16 @@
+echo "Reset iptables rules . . ."
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+iptables -X
+iptables -t nat -F
+iptables -t nat -X
+iptables -t mangle -F
+iptables -t mangle -X
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
 echo "Allow Port 22 & First Configuration"
 iptables -P FORWARD DROP
 iptables -P INPUT DROP
